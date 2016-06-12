@@ -27,6 +27,7 @@ BOUNDARY_DIR="$(find $TMP -type d | grep 'AdminBounds_ESRI' | grep -v 'Administr
 # load data into tables
 python /usr/local/gnaf-loader/load-gnaf.py \
     --pguser gnafun --pgdb gnafdb --pgpassword gnafpw \
+    --no-boundary-tag \
     --gnaf-tables-path "$GNAF_DIR" \
     --admin-bdys-path "$BOUNDARY_DIR"
 
